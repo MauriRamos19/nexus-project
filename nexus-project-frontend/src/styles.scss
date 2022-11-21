@@ -1,0 +1,19 @@
+/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body {
+    margin: 0;
+    height: 100%;
+    min-height: 100%;
+}
+
+.gradient-text {
+    background-image: linear-gradient(90deg, #BC8AFD 0%, #5A24F6 48.44%, #6EE2F5 100%);
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    -moz-text-fill-color: transparent;
+}
