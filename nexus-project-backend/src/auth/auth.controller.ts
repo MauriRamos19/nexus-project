@@ -5,11 +5,9 @@ import { RegisterAuthCompanyDto } from "./dto/registerCompany-auth.dto";
 
 
 @Controller('auth')
-    
 export class AuthController {
     
     constructor(private authService: AuthService){}
-
 
     @Post('register-user')
     signUpUser(@Body() userObject: RegisterAuthUserDto) {
@@ -20,7 +18,4 @@ export class AuthController {
     signUpCompany(@Body() companyObject: RegisterAuthCompanyDto) {
         this.authService.registerCompany(companyObject)
     }
-
-
-
 }

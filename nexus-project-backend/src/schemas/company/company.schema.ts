@@ -5,7 +5,7 @@ import { BusinessEntity } from '../business-entity/business-entity.schema';
 export type CompanyDocument = HydratedDocument<Company>;
 
 
-@Schema({discriminatorKey: 'entityType'})
+@Schema()
 export class Company extends BusinessEntity{
   @Prop()
   RTN: string;

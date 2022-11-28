@@ -22,8 +22,6 @@ export class CompanyService {
         return this.companyModel.findOne({ email: email }).exec(); 
     }
 
-
- 
     async remove(id: string) { 
     return this.companyModel.findByIdAndRemove({ _id: id }).exec(); 
     }

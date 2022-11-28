@@ -11,7 +11,7 @@ import { CompanyModule } from './company/company.module';
     AuthModule, 
     UsersModule, 
     CompanyModule,
-    MongooseModule.forRoot('mongodb+srv://admin:4OUG02gHcb5rFPgn@cluster0.uymtugh.mongodb.net/nexus')
+    MongooseModule.forRoot('mongodb+srv://admin:TXK0110bpQghbBmV@cluster0.uymtugh.mongodb.net/nexus')
   ],
   controllers: [AppController],
   providers: [AppService],
