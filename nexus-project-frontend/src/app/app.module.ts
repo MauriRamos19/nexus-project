@@ -12,7 +12,9 @@ import { PaymentComponent } from './pages/payment/payment.component';
 import { ButtonComponent } from './components/button/button.component';
 import { SignupComponent } from './pages/signup/signup.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
-
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http'
+import { CookieService } from 'ngx-cookie-service'
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,9 +30,11 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [CookieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

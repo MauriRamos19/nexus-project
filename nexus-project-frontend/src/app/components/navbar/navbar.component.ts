@@ -9,9 +9,14 @@ export class NavbarComponent implements OnInit {
 
   constructor(private router: Router) { }
 
- 
-
+  token = window.localStorage.getItem('token') || null
+  
   ngOnInit(): void {
+  }
+
+  signOut(){
+    window.localStorage.removeItem('token');
+    window.location.reload()
   }
 
 }

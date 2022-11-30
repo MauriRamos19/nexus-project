@@ -29,37 +29,37 @@
                 (click)="isUser = false"
                 ></Button>
             </div>
-            <form action="" class="flex flex-col md:px-32 items-center w-full">
+            <form [formGroup]="isUser ? companyForm : userForm" (ngSubmit)="register(isUser ? companyForm: userForm)" action="" class="flex flex-col md:px-32 items-center w-full">
                 <div *ngIf="isUser" class="mt-10">
                     <div class="flex flex-col mb-6">
                         <label for="name">Nombre de la empresa</label>
-                        <input class="bg-gray-200 rounded px-5 py-2 " type="text" name="name" placeholder="">
+                        <input formControlName="name" class="bg-gray-200 rounded px-5 py-2 " type="text" name="name" placeholder="">
                     </div>
                     <div class="flex flex-col mb-7">
                         <label for="RTN">RTN</label>
-                        <input class="bg-gray-200 rounded px-5 py-2" type="text" name="RTN" placeholder="">
+                        <input formControlName="RTN" class="bg-gray-200 rounded px-5 py-2" type="text" name="RTN" placeholder="">
                     </div>
                     <div class="flex flex-col mb-6">
                         <label for="phone">Telefono de contacto</label>
-                        <input class="bg-gray-200 rounded px-5 py-2 " type="text" name="phone" placeholder="">
+                        <input formControlName="phone" class="bg-gray-200 rounded px-5 py-2 " type="text" name="phone" placeholder="">
                     </div>
                     <div class="md:flex flex-row justify-between">
                         <div class="flex flex-col mb-7 mr-2">
                             <label for="country">Pais</label>
-                            <input class="bg-gray-200 rounded px-5 py-2" type="text" name="country" placeholder="">
+                            <input formControlName="country" class="bg-gray-200 rounded px-5 py-2" type="text" name="country" placeholder="">
                         </div>
                         <div class="flex flex-col mb-6">
                             <label for="city">Ciudad</label>
-                            <input class="bg-gray-200 rounded px-5 py-2 " type="text" name="city" placeholder="">
+                            <input formControlName="city" class="bg-gray-200 rounded px-5 py-2 " type="text" name="city" placeholder="">
                         </div>
                     </div>
                     <div class="flex flex-col mb-7">
-                        <label for="pasemailsword">Correo electronico</label>
-                        <input class="bg-gray-200 rounded px-5 py-2" type="email" name="email" placeholder="">
+                        <label for="email">Correo electronico</label>
+                        <input formControlName="email" class="bg-gray-200 rounded px-5 py-2" type="email" name="email" placeholder="">
                     </div>
                     <div class="flex flex-col mb-6">
                         <label for="password">Contraseña</label>
-                        <input class="bg-gray-200 rounded px-5 py-2 " type="password" name="password" placeholder="">
+                        <input formControlName="password" class="bg-gray-200 rounded px-5 py-2 " type="password" name="password" placeholder="">
                     </div>
                     <div class="flex flex-col mb-7">
                         <label for="password">Confimar Contraseña</label>
@@ -71,32 +71,32 @@
                     <div class="md:flex flex-row justify-between">
                         <div class="flex flex-col mb-7">
                             <label for="name">Nombre</label>
-                            <input class="bg-gray-200 rounded px-5 py-2" type="text" name="name" placeholder="">
+                            <input formControlName="name" class="bg-gray-200 rounded px-5 py-2" type="text" name="name" placeholder="">
                         </div>
                         <div class="mx-2"></div>
                         <div class="flex flex-col mb-7">
                             <label for="lastname">Apellido</label>
-                            <input class="bg-gray-200 rounded px-5 py-2" type="text" name="lastname" placeholder="">
+                            <input formControlName="lastname" class="bg-gray-200 rounded px-5 py-2" type="text" name="lastname" placeholder="">
                         </div>
                     </div>
                     <div class="md:flex flex-row justify-between">
                         <div class="flex flex-col mb-7">
                             <label for="country">Pais</label>
-                            <input class="bg-gray-200 rounded px-5 py-2" type="text" name="country" placeholder="">
+                            <input formControlName="country" class="bg-gray-200 rounded px-5 py-2" type="text" name="country" placeholder="">
                         </div>
                         <div class="flex flex-col mb-7">
                             <label for="city">Ciudad</label>
-                            <input class="bg-gray-200 rounded px-5 py-2" type="text" name="city" placeholder="">
+                            <input formControlName="city" class="bg-gray-200 rounded px-5 py-2" type="text" name="city" placeholder="">
                         </div>
                     </div>
                         
                     <div class="flex flex-col mb-6">
                         <label for="email">Correo:</label>
-                        <input class="bg-gray-200 rounded px-5 py-2 " type="text" name="email" placeholder="">
+                        <input formControlName="email" class="bg-gray-200 rounded px-5 py-2 " type="text" name="email" placeholder="">
                     </div>
                     <div class="flex flex-col mb-7">
                         <label for="password">Contraseña:</label>
-                        <input class="bg-gray-200 rounded px-5 py-2" type="password" name="password" placeholder="">
+                        <input formControlName="password" class="bg-gray-200 rounded px-5 py-2" type="password" name="password" placeholder="">
                     </div>
                     <div class="flex flex-col mb-7">
                         <label for="password">Contraseña:</label>
@@ -110,6 +110,7 @@
                     btnColor="white"
                     btnBgColor="linear-gradient(90deg, #BC8AFD 0%, #5A24F6 48.44%, #6EE2F5 100%)"
                     btnBgColorHover="linear-gradient(90deg, #6B508D 0%, #2B1273 48.44%, #32626A 100%)"
+                    [disabled]="isUser ? companyForm.invalid : userForm.invalid"
                 ></Button>
             </form>
             
