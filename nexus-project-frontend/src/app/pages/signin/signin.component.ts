@@ -31,7 +31,7 @@ export class SigninComponent implements OnInit {
 
 
   login(userForm: FormGroup) {
-    this.authService.login({'username': userForm.value.email, 'password': userForm.value.password})
+    this.authService.login({'email': userForm.value.email, 'password': userForm.value.password})
       .subscribe( data => {
         this.router.navigate(['/'])
         window.localStorage.setItem('token', data.access_token)

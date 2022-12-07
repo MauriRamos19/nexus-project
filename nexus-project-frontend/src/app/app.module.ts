@@ -14,7 +14,8 @@ import { SignupComponent } from './pages/signup/signup.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http'
-import { CookieService } from 'ngx-cookie-service'
+import { CookieService } from 'ngx-cookie-service';
+import { StoreComponent } from './components/store/store.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,7 +26,8 @@ import { CookieService } from 'ngx-cookie-service'
     PaymentComponent,
     ButtonComponent,
     SignupComponent,
-    DashboardComponent
+    DashboardComponent,
+    StoreComponent
   ],
   imports: [
     BrowserModule,

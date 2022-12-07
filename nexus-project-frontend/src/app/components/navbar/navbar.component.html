@@ -36,6 +36,22 @@
         <a href=""><span class="font-sans">Documentacion</span></a>
     </nav>
     <div class="flex">
+        <Button *ngIf="entity.entitytype === 'User' && entity.roleType==='admin'"
+            btnText="Dashboard" 
+            btnWidth="120px" 
+            btnColor="white"
+            btnBgColor="linear-gradient(90deg, #EB12B4 0%, #B312EB 100%)"
+            btnBgColorHover="linear-gradient(90deg, #8A0769 0%, #710C95 100%)"
+            routerLink="/dashboard" 
+            routerLinkActive="active-link"
+        ></Button>
+        <Button *ngIf="entity.entitytype === 'Company'"
+            btnText="Ir a tienda" 
+            btnWidth="120px" 
+            btnColor="white"
+            btnBgColor="linear-gradient(90deg, #EB12B4 0%, #B312EB 100%)"
+            btnBgColorHover="linear-gradient(90deg, #8A0769 0%, #710C95 100%)"
+        ></Button>
         <Button 
             btnText="Cerrar Sesion" 
             btnWidth="120px" 

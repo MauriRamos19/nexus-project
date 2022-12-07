@@ -5,7 +5,7 @@
             Eres nuevo? <a routerLink="/signUp" routerLinkActive="active-link" style="color: blue;">Registrate aqui!</a>
         </div>
         <div class="flex flex-col mt-32 text-lg">
-            <form [formGroup]="entityForm"  (ngSubmit)="login(entityForm)" action="" class="flex flex-col md:px-32 w-full">
+            <form [formGroup]="entityForm"  (ngSubmit)="login(entityForm)" (keyup.enter)="login(entityForm)"  action="" class="flex flex-col md:px-32 w-full">
                 <h1 class="self-center text-black font-bold text-4xl mb-6">Iniciar Sesión</h1>
                 <div class="flex flex-col mb-6">
                     <label for="email">Correo:</label>
