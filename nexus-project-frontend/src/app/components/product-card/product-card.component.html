@@ -1,0 +1,56 @@
+<div *ngIf="entity === 'Company'" class="group relative">
+    
+    <div class="relative min-h-80 aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-md bg-gray-200 group-hover:opacity-75 lg:aspect-none lg:h-80">
+        <img [src]="product.img" alt="img" class="absolute h-full w-full object-cover object-center lg:h-full lg:w-full">
+        
+    </div>
+        
+    
+
+<div class="mt-4 flex justify-between">
+    <div>
+    <h2 class="text-lg text-gray-700">
+        <a>
+            <span aria-hidden="true" class="absolute inset-0"></span>
+            {{product.name}}
+        </a>
+    </h2>
+    <h3 class="text-sm text-gray-700">
+            {{product.description}}
+    </h3>
+    </div>
+    <p class="text-sm font-medium text-gray-900">L. {{product.price}}</p>
+</div>
+<div  class="border rounded-full absolute top-2 right-2 hover text-3xl bg-red-50 text-red-900" (click)="remove(product._id)"><fa-icon class="p-3" style="cursor:pointer;" [icon]="faTrashCan"></fa-icon></div>
+</div>
+
+
+
+
+<div *ngIf="entity === 'User'" class="group relative">
+    
+    <div class="relative min-h-80 aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-md bg-gray-200 group-hover:opacity-75 lg:aspect-none lg:h-80">
+        <img [src]="product.img" alt="img" class="absolute h-full w-full object-cover object-center lg:h-full lg:w-full">
+        
+    </div>
+        
+    
+
+<div class="mt-4 flex justify-between">
+    <div>
+    <h2 class="text-lg text-gray-700">
+        <a>
+            <span aria-hidden="true" class="absolute inset-0"></span>
+            {{product.name}}
+        </a>
+    </h2>
+    <h3 class="text-sm text-gray-700">
+            {{product.description}}
+    </h3>
+    </div>
+    <p class="text-sm font-medium text-gray-900">L. {{product.price}}</p>
+</div>
+</div>
+
+            
+   

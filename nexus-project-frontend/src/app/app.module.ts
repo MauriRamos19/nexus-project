@@ -15,7 +15,12 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http'
 import { CookieService } from 'ngx-cookie-service';
-import { StoreComponent } from './components/store/store.component'
+import { StoreComponent } from './components/store/store.component';
+import { ProductCardComponent } from './components/product-card/product-card.component';
+import { CompanyListComponent } from './components/company-list/company-list.component';
+import { CompanyDetailsComponent } from './components/company-details/company-details.component';
+import { CompanyStoreComponent } from './components/company-store/company-store.component';
+import { ProductOverviewComponent } from './components/product-overview/product-overview.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +32,12 @@ import { StoreComponent } from './components/store/store.component'
     ButtonComponent,
     SignupComponent,
     DashboardComponent,
-    StoreComponent
+    StoreComponent,
+    ProductCardComponent,
+    CompanyListComponent,
+    CompanyDetailsComponent,
+    CompanyStoreComponent,
+    ProductOverviewComponent
   ],
   imports: [
     BrowserModule,
