@@ -1,4 +1,4 @@
-import { Document } from "mongoose";
+import mongoose, { Document } from "mongoose";
 
 export enum Role {
     ADMIN = 'admin',
@@ -15,4 +15,6 @@ export interface UserDoc extends Document {
     roleType: Role;
     comparePassword(password: string): Promise<boolean>;
     generateToken(): string;
+    cart: any,
+    products: any
   }

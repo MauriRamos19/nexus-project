@@ -1,7 +1,7 @@
 
 import mongoose from 'mongoose'
 import { BusinessEntity } from './business-entity.schema'
-import {CompanyDoc } from './company.model'
+import { CompanyDoc } from './company.model'
 
 
 const companySchema = new mongoose.Schema<CompanyDoc>({
@@ -12,6 +12,10 @@ const companySchema = new mongoose.Schema<CompanyDoc>({
     phone: {
         type: String,
         required: true
+    },
+    products: {
+        type: Array,
+        default: []
     }
 })
 

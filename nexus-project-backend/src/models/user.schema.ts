@@ -13,7 +13,15 @@ const userSchema = new mongoose.Schema<UserDoc>({
         type: String,
         enum: Role,
         default: Role.CLIENT
-    }
+    },
+    cart: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Product'
+    }],
+    products: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Product'
+    }]
 })
 
 

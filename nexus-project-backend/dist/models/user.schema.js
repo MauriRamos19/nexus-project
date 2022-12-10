@@ -16,7 +16,15 @@ const userSchema = new mongoose_1.default.Schema({
         type: String,
         enum: user_model_1.Role,
         default: user_model_1.Role.CLIENT
-    }
+    },
+    cart: [{
+            type: mongoose_1.default.Schema.Types.ObjectId,
+            ref: 'Product'
+        }],
+    products: [{
+            type: mongoose_1.default.Schema.Types.ObjectId,
+            ref: 'Product'
+        }]
 });
 exports.User = business_entity_schema_1.BusinessEntity.discriminator('User', userSchema);
 //# sourceMappingURL=user.schema.js.map
