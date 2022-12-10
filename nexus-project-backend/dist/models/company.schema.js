@@ -14,6 +14,10 @@ const companySchema = new mongoose_1.default.Schema({
     phone: {
         type: String,
         required: true
+    },
+    products: {
+        type: Array,
+        default: []
     }
 });
 exports.Company = business_entity_schema_1.BusinessEntity.discriminator('Company', companySchema);

@@ -1,1 +1,184 @@
-<p>store works!</p>
+<div class="flex w-full h-20 justify-end px-10 border">
+    <Button
+    btnText="Agregar producto" 
+    btnWidth="200px" 
+    btnColor="white"
+    btnBgColor="linear-gradient(90deg, #EB12B4 0%, #B312EB 100%)"
+    btnBgColorHover="linear-gradient(90deg, #8A0769 0%, #710C95 100%)"
+    routerLink="/store" 
+    routerLinkActive="active-link"
+    (click)="toggleModal()"
+    ></Button>
+</div>
+
+      
+
+<div class="bg-white">
+    <div class="mx-auto max-w-2xl py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
+  
+      <div class="mt-6 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
+        <app-product-card (load)="loadProducts()" *ngFor="let product of products" (removeProduct)="deleteProduct($event)" [product]="product"></app-product-card>
+      </div>
+    </div>
+</div>
+
+
+
+<div *ngIf="showModal" class="overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none justify-center items-center flex">
+  <div class="relative w-auto my-6 mx-auto max-w-6xl">
+    <!--content-->
+    <div class="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
+      <!--header-->
+      <div class="flex items-start justify-between p-5 border-b border-solid border-slate-200 rounded-t">
+        <h3 class="text-3xl font-semibold">
+          Nuevo producto
+        </h3>
+        <button class="p-1 ml-auto bg-transparent border-0 text-black opacity-5 float-right text-3xl leading-none font-semibold outline-none focus:outline-none" (click)="toggleModal()">
+          <span class="bg-transparent text-black opacity-5 h-6 w-6 text-2xl block outline-none focus:outline-none">
+            ×
+          </span>
+        </button>
+      </div>
+      <!--body-->
+      <div class="relative p-6 flex-auto">
+        <form [formGroup]="productForm">
+            <div class="mb-3 xl:w-96">
+                <label for="name" class="form-label inline-block mb-2 text-gray-700"
+                  >Nombre del producto:</label
+                >
+                <input
+                  type="text"
+                  class="
+                    form-control
+                    block
+                    w-full
+                    px-3
+                    py-1.5
+                    text-base
+                    font-normal
+                    text-gray-700
+                    bg-white bg-clip-padding
+                    border border-solid border-gray-300
+                    rounded
+                    transition
+                    ease-in-out
+                    m-0
+                    focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
+                  "
+                  id="name"
+                  formControlName="name"
+                  name="name"
+                />
+              </div>
+              <div class="mb-3 xl:w-96">
+                <label for="description" class="form-label inline-block mb-2 text-gray-700"
+                  >Descripcion del producto:</label
+                >
+                <input
+                  type="text"
+                  class="
+                    form-control
+                    block
+                    w-full
+                    px-3
+                    py-1.5
+                    text-base
+                    font-normal
+                    text-gray-700
+                    bg-white bg-clip-padding
+                    border border-solid border-gray-300
+                    rounded
+                    transition
+                    ease-in-out
+                    m-0
+                    focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
+                  "
+                  id="description"
+                  formControlName="description"
+                  name="description"
+                />
+              </div>
+              <div class="mb-3 xl:w-96">
+                <label for="img" class="form-label inline-block mb-2 text-gray-700"
+                  >Imagen:</label
+                >
+                <input
+                  type="file"
+                  class="
+                    form-control
+                    block
+                    w-full
+                    px-3
+                    py-1.5
+                    text-base
+                    font-normal
+                    text-gray-700
+                    bg-white bg-clip-padding
+                    border border-solid border-gray-300
+                    rounded
+                    transition
+                    ease-in-out
+                    m-0
+                    focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
+                  "
+                  id="img"
+                  formControlName="img"
+                  name="img"
+                  (change)="onChangeProductImage($event)"
+                />
+              </div>
+              <div class="mb-3 xl:w-96">
+                <label for="exampleFormControlInput1" class="form-label inline-block mb-2 text-gray-700"
+                  >Precio:</label
+                >
+                <input
+                  type="number"
+                  class="
+                    form-control
+                    block
+                    w-full
+                    px-3
+                    py-1.5
+                    text-base
+                    font-normal
+                    text-gray-700
+                    bg-white bg-clip-padding
+                    border border-solid border-gray-300
+                    rounded
+                    transition
+                    ease-in-out
+                    m-0
+                    focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
+                  "
+                  id="price"
+                  formControlName="price"
+                  name="price"
+                />
+              </div>
+            </form>
+      </div>
+      <!--footer-->
+      <div class="flex items-center justify-end p-6 border-t border-solid border-slate-200 rounded-b">
+        <button class="text-red-500 background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button" (click)="toggleModal()">
+          Cerrar
+        </button>
+        <Button
+            (click)="newProduct(productForm)"
+            btnText="Agregar" 
+            btnWidth="150px" 
+            btnColor="white"
+            btnBgColor="#000066"
+            btnBgColorHover="#000066"
+            routerLink="/store" 
+            routerLinkActive="active-link"
+            [disabled]="productForm.invalid"
+        ></Button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+<div *ngIf="showModal" class="opacity-25 fixed inset-0 z-40 bg-black"></div>`
+
+
+ 

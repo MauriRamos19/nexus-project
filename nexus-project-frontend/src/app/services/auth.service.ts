@@ -11,6 +11,7 @@ export class AuthService {
   private readonly url = 'http://localhost:8888/api/auth/signIn'
   private readonly authUrl = 'http://localhost:8888/api/auth/'
 
+
   login(entity: any): Observable<any> {
     return this.http.post<any>(this.url, entity);
   }
@@ -18,5 +19,7 @@ export class AuthService {
   register(entity: any, typeEntity: any): Observable<any> {
     return this.http.post<any>(this.authUrl + typeEntity, entity);
   }
+
+  
   
 }

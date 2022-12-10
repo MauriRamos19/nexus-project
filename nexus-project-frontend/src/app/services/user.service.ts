@@ -19,4 +19,13 @@ export class UserService {
      
     return this.http.get(`${this.url}`, { headers: headers })
   }
+
+  getAllCompany(token: any) {
+    const headers:any = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'authorization': `Bearer ${token}`
+    })
+     
+    return this.http.get(`${this.url}/company`, { headers: headers })
+  }
 }

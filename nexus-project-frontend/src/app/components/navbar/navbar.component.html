@@ -35,8 +35,8 @@
         <a routerLink="/payment" routerLinkActive="active"><span class="font-sans">Planes de pago</span></a>
         <a href=""><span class="font-sans">Documentacion</span></a>
     </nav>
-    <div class="flex">
-        <Button class="mleft" *ngIf="entity.entitytype === 'User' && entity.roleType==='admin'"
+    <div class="flex gap-3"><!-- class="mleft" -->
+        <Button *ngIf="entity.entitytype === 'User' && entity.roleType==='admin'"
             btnText="Dashboard" 
             btnWidth="120px" 
             btnColor="white"
@@ -45,12 +45,15 @@
             routerLink="/dashboard" 
             routerLinkActive="active-link"
         ></Button>
+        <fa-icon (click)="toogleModal()" class="text-4xl mr-4 cursor-pointer" *ngIf="entity.entitytype === 'User' && entity.roleType==='client'" [icon]="faCartShopping"></fa-icon>
         <Button *ngIf="entity.entitytype === 'Company'"
             btnText="Ir a tienda" 
             btnWidth="120px" 
             btnColor="white"
             btnBgColor="linear-gradient(90deg, #EB12B4 0%, #B312EB 100%)"
             btnBgColorHover="linear-gradient(90deg, #8A0769 0%, #710C95 100%)"
+            routerLink="/store" 
+            routerLinkActive="active-link"
         ></Button>
         <Button 
             btnText="Cerrar Sesion" 
@@ -62,3 +65,5 @@
         ></Button>
     </div>
 </div>
+
+
