@@ -22,6 +22,7 @@ router.get('/users', auth_controller_1.protect, entities_controller_1.getUsers);
 router.get('/company', entities_controller_1.getCompany);
 router.get('/company/products', auth_controller_1.protect, entities_controller_1.getProducts);
 router.post('/company/products', auth_controller_1.protect, upload.single('img'), entities_controller_1.addProduct);
+router.delete('/company/products/:id', auth_controller_1.protect, entities_controller_1.deleteProduct);
 router.get('/', auth_controller_1.protect, entities_controller_1.getEntity);
 router.get('/user/company/:id/products', entities_controller_1.getCompanyProductsById);
 router.get('/user/company/:id/products/:productId', entities_controller_1.getProductById);
