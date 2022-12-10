@@ -121,7 +121,7 @@
     </div>
 </div>
 
-<div *ngIf="token" class="flex flex-col mx-16 my-5 gap-36">
+<div *ngIf="token && entity.roleType === 'client'" class="flex flex-col mx-16 my-5 gap-36">
     <app-company-list [entity]="entity" [token]="token"></app-company-list>
 </div>
 
